@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Первые блюда</h2>
+<ul>
+    {% for recipe in first_courses %}
+    <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Вторые блюда</h2>
+<ul>
+    {% for recipe in second_courses %}
+    <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Салаты</h2>
+<ul>
+    {% for recipe in salads %}
+    <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Десерты</h2>
+<ul>
+    {% for recipe in desserts %}
+    <li><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
